@@ -36,6 +36,18 @@ public class Bala : MonoBehaviour
             Debug.Log("Daño: "+ daño);
             Destroy(gameObject);
         }
+        if(other.CompareTag("Enemy4"))
+        {
+            //other.GetComponent<Enemy4>().TomarDaño(daño);
+            //Debug.Log("Daño: "+ daño);
+            Destroy(gameObject);
+        }
+        if(other.CompareTag("Zorro"))
+        {
+            other.GetComponent<MovimientoZorro>().TomarDaño(daño);
+            Debug.Log("Daño: "+ daño);
+            Destroy(gameObject);
+        }
     
     }
 }

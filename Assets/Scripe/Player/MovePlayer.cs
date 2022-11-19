@@ -29,6 +29,13 @@ public class MovePlayer : MonoBehaviour
     [SerializeField] private bool enSuelo;
 
     private bool salto = false;
+    [Header("SaltoRegulable")]
+    [Range(0,1)][SerializeField] private float multiplicadorCancelarSalto;
+    [SerializeField] private float multiplicadorGravedad;
+    private float escalaGravedad;
+    private bool botonSaltoArriba = true;
+
+
 
     [Header("Animacion")]
 
@@ -40,6 +47,7 @@ public class MovePlayer : MonoBehaviour
     {
         rb2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        escalaGravedad = rb2D.gravityScale;
     }
 
     // Update is called once per frame
@@ -50,8 +58,11 @@ public class MovePlayer : MonoBehaviour
         animator.SetFloat("Horizontal", Mathf.Abs(movimientoHorizontak));
         animator.SetFloat("VelocidadY", rb2D.velocity.y);
 
-        if(Input.GetButtonDown("Jump")){
+        if(Input.GetButton("Jump")){
             salto = true;
+        }
+        if(Input.GetButtonUp("Jump")){
+            BotonSaltoArriba();
         }
     }
 
@@ -76,15 +87,29 @@ public class MovePlayer : MonoBehaviour
         else if(mover < 0 && mirandoDerecha){
             Girar();
         }
-        if(enSuelo && saltar){
+        if(enSuelo && saltar && botonSaltoArriba){
             Saltar();
+        }
+        if(rb2D.velocity.y < 0 && !enSuelo){
+            rb2D.gravityScale = escalaGravedad * multiplicadorGravedad;
+        }else{
+            rb2D.gravityScale = escalaGravedad;
         }
 
     }
     public void Saltar(){
         enSuelo = false;
         rb2D.AddForce(new Vector2(0f, fuerzaDeSalto));
+        botonSaltoArriba = false;
         OnJump?.Invoke(this, EventArgs.Empty);
+    }
+    private void BotonSaltoArriba(){
+        if(rb2D.velocity.y>0)
+        {
+            rb2D.AddForce(Vector2.down * rb2D.velocity.y * (1 - multiplicadorCancelarSalto), ForceMode2D.Impulse);
+        }
+        botonSaltoArriba = true;
+        salto= false;
     }
     public void Rebote(Vector2 puntoGolpe)
     {

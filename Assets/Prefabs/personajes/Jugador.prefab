@@ -219,13 +219,15 @@ MonoBehaviour:
   velocidadRebote: {x: 0.3, y: 0.3}
   velocidadDeMovimiento: 400
   suavizadoDeMovimiento: 0.126
-  fuerzaDeSalto: 400
+  fuerzaDeSalto: 470
   queEsSuelo:
     serializedVersion: 2
     m_Bits: 64
   controladorSuelo: {fileID: 5572402414907247901}
   dimensionesCaja: {x: 1, y: 0.25, z: 0}
   enSuelo: 0
+  multiplicadorCancelarSalto: 0.3
+  multiplicadorGravedad: 1
 --- !u!95 &5572402414498307928
 Animator:
   serializedVersion: 4
@@ -293,9 +295,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 300
-  vida1: {fileID: 0}
-  vida2: {fileID: 0}
-  vida3: {fileID: 0}
   tiempoPerdidaControl: 0.3
 --- !u!1 &5572402414907247900
 GameObject:

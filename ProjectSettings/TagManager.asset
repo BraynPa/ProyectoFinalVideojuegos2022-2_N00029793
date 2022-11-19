@@ -19,6 +19,9 @@ TagManager:
   - PuntoDeControl
   - ControlarVidas
   - Enemy3
+  - Zorro
+  - Vida4
+  - Enemy4
   layers:
   - Default
   - TransparentFX
@@ -29,8 +32,8 @@ TagManager:
   - Piso
   - Jugador
   - Enemigo
-  - 
-  - 
+  - Zorro
+  - Jefes
   - 
   - 
   - 

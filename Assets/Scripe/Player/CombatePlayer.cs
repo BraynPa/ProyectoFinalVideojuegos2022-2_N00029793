@@ -5,7 +5,7 @@ using System;
 
 public class CombatePlayer : MonoBehaviour
 {
-    [SerializeField] private float vida;
+    [SerializeField] public float vida;
     [SerializeField] private float tiempoPerdidaControl;
     private VidasController combateJugador;
     private MovePlayer MovimientoJugador;
@@ -34,11 +34,16 @@ public class CombatePlayer : MonoBehaviour
             rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
             animator.SetTrigger("Muerte");
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Jugador"), LayerMask.NameToLayer("Enemigo"), true);
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Jugador"), LayerMask.NameToLayer("Zorro"), true);
         }else if(vida <= 100){
             combateJugador.Vida2();
         }else if(vida <= 200){
             combateJugador.Vida3();
         }
+    }
+    public float GetVida(){
+        float prueba = vida;
+        return prueba;
     }
     
     public void TomarDaño(float daño, Vector2 posicion, float i, float f, float t){
@@ -57,6 +62,7 @@ public class CombatePlayer : MonoBehaviour
             rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
             animator.SetTrigger("Muerte");
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Jugador"), LayerMask.NameToLayer("Enemigo"), true);
+            Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Jugador"), LayerMask.NameToLayer("Zorro"), true);
 
         }else if(vida <= 100){
             combateJugador.Vida2();
@@ -76,8 +82,10 @@ public class CombatePlayer : MonoBehaviour
     private IEnumerator DesactivarColision()
     {
         Physics2D.IgnoreLayerCollision(7,8, true);
+        Physics2D.IgnoreLayerCollision(7,9, true);
         yield return new WaitForSeconds(tiempoPerdidaControl); 
         Physics2D.IgnoreLayerCollision(7,8, false);
+        Physics2D.IgnoreLayerCollision(7,9, false);
     }
     private IEnumerator PerderControl(){
         MovimientoJugador.sePuedeMover = false;
