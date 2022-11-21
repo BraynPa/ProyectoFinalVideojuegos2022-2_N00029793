@@ -11,6 +11,8 @@ public class Jeve2 : MonoBehaviour, IDaño
     private bool mirandoDerecha = true;
     [SerializeField] private GameObject Uno;
     [SerializeField] private GameObject Dos;
+    [SerializeField] private GameObject Suelo;
+    [SerializeField] private GameObject SueloCol;
 
     [Header("Vida")]
 
@@ -38,6 +40,7 @@ public class Jeve2 : MonoBehaviour, IDaño
 
     public void TomarDaño(float daño)
     {
+        animator.SetTrigger("Damage");
         vida -= daño;
         barraDeVida.CambiarVidaActual(vida);
         if(vida <= 0)
@@ -52,6 +55,8 @@ public class Jeve2 : MonoBehaviour, IDaño
     }
     public void ActiveSuelo(){
         Dos.SetActive(true);
+        Suelo.SetActive(true);
+        SueloCol.SetActive(true);
     }
     public void MirarJugador()
     {

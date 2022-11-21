@@ -70,6 +70,9 @@ public class CombatePlayer : MonoBehaviour
             combateJugador.Vida3();
         }
     }
+    public void TomarDaño(float i, float f, float t){
+        EfectoDaño(i,f,t);
+    }
     private void EfectoDaño(float i, float f, float t){
         CineMCmaraMovimiento.Instance.MoverCamara(i,f,t);
     }

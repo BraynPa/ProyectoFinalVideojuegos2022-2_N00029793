@@ -18,7 +18,13 @@ EditorBuildSettings:
     path: Assets/Scenes/level2.unity
     guid: dab70718ad353cc4e905715717cc9d25
   - enabled: 1
-    path: Assets/Scenes/JeveNivel2.unity
+    path: Assets/Scenes/jefe2defi.unity
+    guid: 4ec4dae6a5900c04ba47d50d5015116a
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 4575cebd0cbaf814abb5f96fb1a55ad2
+  - enabled: 1
+    path: Assets/Scenes/JeveNivel3.unity
     guid: 62bd0219752d7ad4282ee9f41b28d371
   - enabled: 1
     path: Assets/Scenes/Menu.unity

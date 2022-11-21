@@ -48,6 +48,6 @@ public class Bala : MonoBehaviour
             Debug.Log("Daño: "+ daño);
             Destroy(gameObject);
         }
-    
+        Destroy(gameObject);
     }
 }
