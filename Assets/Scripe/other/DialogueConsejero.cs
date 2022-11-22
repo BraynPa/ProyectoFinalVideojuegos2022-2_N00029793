@@ -19,9 +19,12 @@ public class DialogueConsejero : MonoBehaviour
     void Update()
     {  
         if(IsPlayerInRange && Input.GetKeyUp(KeyCode.T)){
+            AudioManager.instance.PlayAudio(AudioManager.instance.button);
             if(!didDialogueStart){
+                
                 StartDialogue();
             }else if(dialogueText.text == dialogueLines[lineIndex]){
+
                 NextDialogueLine();
             }
             else{
@@ -54,7 +57,7 @@ public class DialogueConsejero : MonoBehaviour
     }
     private IEnumerator ShowLine(){
         dialogueText.text = string.Empty;
-
+        AudioManager.instance.PlayAudio(AudioManager.instance.text);
         foreach(char ch in dialogueLines[lineIndex]){
             dialogueText.text += ch;
             yield return new WaitForSecondsRealtime(typingTime);

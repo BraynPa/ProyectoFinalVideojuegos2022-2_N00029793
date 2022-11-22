@@ -34,6 +34,7 @@ public class CombateCaC : MonoBehaviour
     private void Golpe(){
 
         animator.SetTrigger("Golpe");
+        AudioManager.instance.PlayAudio(AudioManager.instance.espadaPlayer);
         Collider2D[] objetos = Physics2D.OverlapCircleAll(controladorGolpe.position,radioGolpe);//Se le envia la posicion y el radio para generarlo
 
         foreach (Collider2D colisionador in objetos)//Recorremos los objetos

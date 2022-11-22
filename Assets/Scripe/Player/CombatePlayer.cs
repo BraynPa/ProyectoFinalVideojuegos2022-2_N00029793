@@ -22,6 +22,7 @@ public class CombatePlayer : MonoBehaviour
     }
     public void TomarDaño(float daño, float i, float f, float t)
     {
+        AudioManager.instance.PlayAudio(AudioManager.instance.damagePlayer);
         EfectoDaño(i,f,t);
         vida -= daño;
         if(vida>0)
@@ -47,6 +48,7 @@ public class CombatePlayer : MonoBehaviour
     }
     
     public void TomarDaño(float daño, Vector2 posicion, float i, float f, float t){
+        AudioManager.instance.PlayAudio(AudioManager.instance.damagePlayer);
         EfectoDaño(i,f,t);
         vida -= daño;
         if(vida>0)

@@ -26,6 +26,9 @@ public class CofreItem : MonoBehaviour
             animator.SetTrigger("isopen");  
         }
     }
+    public void OpenCofre(){
+        AudioManager.instance.PlayAudio(AudioManager.instance.openCofre);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player") && !pressV){

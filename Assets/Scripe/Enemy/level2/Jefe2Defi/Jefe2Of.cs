@@ -88,10 +88,12 @@ public class Jefe2Of : MonoBehaviour, IDaño
                 StartCoroutine(Jefe2OfStatuses());
                 break;
             case Jefe2OfStatus.ATAQUEPUNO2:
+                AudioManager.instance.PlayAudio(AudioManager.instance.enemigoPatada);
                 anim.SetTrigger("COMBO2");
                 StartCoroutine(Jefe2OfStatuses());
                 break;
             case Jefe2OfStatus.ATTACKPUNO:
+                AudioManager.instance.PlayAudio(AudioManager.instance.enemigoPatada);
                 anim.SetTrigger("COMBO1");
                 StartCoroutine(Jefe2OfStatuses());
                 break;
@@ -118,6 +120,7 @@ public class Jefe2Of : MonoBehaviour, IDaño
     }
     private void Muerte()
     {
+        AudioManager.instance.PlayAudio(AudioManager.instance.enemigoDies);
         NextLevel.SetActive(true);
         isDeath = true;
     }

@@ -12,6 +12,7 @@ public class HabilidadJefe : MonoBehaviour
 
     void Start()
     {
+        AudioManager.instance.PlayAudio(AudioManager.instance.habilidadAgua);
         Destroy(gameObject, tiempoDeVida);
     }
 

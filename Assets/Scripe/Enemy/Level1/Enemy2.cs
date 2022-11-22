@@ -63,6 +63,9 @@ public class Enemy2 : MonoBehaviour,IDaño
         }
             
     }
+    public void audio(){
+        AudioManager.instance.PlayAudio(AudioManager.instance.enemigo3Attack);
+    }
     private void OnTriggerEnter2D(Collider2D collider)
     {
        if (collider.gameObject.tag == "Limit1")
@@ -98,6 +101,7 @@ public class Enemy2 : MonoBehaviour,IDaño
         Debug.Log("recibi daño");
         if(vida <= 0)
         {
+            AudioManager.instance.PlayAudio(AudioManager.instance.enemigoMuere);
             Debug.Log("mori");
             SetAnimation(morir);
         }

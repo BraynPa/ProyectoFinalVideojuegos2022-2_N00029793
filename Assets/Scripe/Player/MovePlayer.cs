@@ -64,6 +64,9 @@ public class MovePlayer : MonoBehaviour
         if(Input.GetButtonUp("Jump")){
             BotonSaltoArriba();
         }
+        if(Input.GetButton("Horizontal")){
+            AudioManager.instance.PlayAudio(AudioManager.instance.walkPlayer);
+        }
     }
 
     private void FixedUpdate(){
@@ -80,7 +83,6 @@ public class MovePlayer : MonoBehaviour
     private void Mover(float mover, bool saltar){
         Vector3 velocidadObjetivo = new Vector2(mover, rb2D.velocity.y);
         rb2D.velocity = Vector3.SmoothDamp(rb2D.velocity, velocidadObjetivo, ref velocidad, suavizadoDeMovimiento);
-
         if(mover > 0 && !mirandoDerecha){
             Girar();
         }
@@ -98,6 +100,7 @@ public class MovePlayer : MonoBehaviour
 
     }
     public void Saltar(){
+        AudioManager.instance.PlayAudio(AudioManager.instance.jumpPlayer);
         enSuelo = false;
         rb2D.AddForce(new Vector2(0f, fuerzaDeSalto));
         botonSaltoArriba = false;

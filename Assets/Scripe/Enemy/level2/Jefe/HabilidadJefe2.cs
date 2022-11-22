@@ -12,6 +12,7 @@ public class HabilidadJefe2 : MonoBehaviour
 
     void Start()
     {
+        AudioManager.instance.PlayAudio(AudioManager.instance.espadaJefe3Cae);
         Destroy(gameObject, tiempoDeVida);
     }
 

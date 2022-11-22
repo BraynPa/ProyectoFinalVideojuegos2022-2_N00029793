@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PuntoControl : MonoBehaviour
 {
-    private Animator animator;
+    /*private Animator animator;
 
     void Start()
     {
@@ -25,5 +25,5 @@ public class PuntoControl : MonoBehaviour
         }
 
 
-    }
+    }*/
 }

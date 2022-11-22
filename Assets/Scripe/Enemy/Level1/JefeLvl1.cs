@@ -41,8 +41,15 @@ public class JefeLvl1 : MonoBehaviour, IDaño
         barraDeVida.CambiarVidaActual(vida);
         if(vida <= 0)
         {
+            activeExplosion();
             animator.SetTrigger("Muerte");
         }
+    }
+    public void activeExplosion(){
+        AudioManager.instance.PlayAudio(AudioManager.instance.explosion1);
+    }
+    public void activePatada(){
+        AudioManager.instance.PlayAudio(AudioManager.instance.enemigoPatada);
     }
     private void Muerte()
     {

@@ -33,6 +33,9 @@ public class ControllerCofre : MonoBehaviour
         }
 
     }
+    public void OpenCofre(){
+        AudioManager.instance.PlayAudio(AudioManager.instance.openCofre);
+    }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player")){

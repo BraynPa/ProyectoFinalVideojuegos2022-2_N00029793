@@ -23,6 +23,7 @@ public class Palanca : MonoBehaviour
     void Update()
     {
         if(IsPlayerInRange && Input.GetKeyUp(KeyCode.V) && valor == 0){
+            AudioManager.instance.PlayAudio(AudioManager.instance.palanca);
             activo = true;
             Uno.SetActive(false);
             Dos.SetActive(true);

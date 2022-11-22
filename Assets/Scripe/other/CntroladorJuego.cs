@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CntroladorJuego : MonoBehaviour
 {
-    public static CntroladorJuego Instance;
-    [SerializeField] private GameObject[] puntosDeControl;
+   /* public static CntroladorJuego Instance;
     [SerializeField] private GameObject jugador;
     private int indexPuntosControl;
 
@@ -30,5 +29,5 @@ public class CntroladorJuego : MonoBehaviour
                 PlayerPrefs.SetInt("puntosIndex", i);
             }
         }
-    }
+    }*/
 }

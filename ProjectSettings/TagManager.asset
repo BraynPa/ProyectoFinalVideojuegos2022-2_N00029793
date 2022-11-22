@@ -24,6 +24,7 @@ TagManager:
   - Enemy4
   - MuroJefe2
   - MuroCaida
+  - Erizo
   layers:
   - Default
   - TransparentFX
@@ -37,7 +38,7 @@ TagManager:
   - Zorro
   - Jefes
   - SueloJefe
-  - 
+  - Camaras
   - 
   - 
   - 

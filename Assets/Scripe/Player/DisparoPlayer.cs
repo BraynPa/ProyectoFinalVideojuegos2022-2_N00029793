@@ -28,6 +28,7 @@ public class DisparoPlayer : MonoBehaviour
     }
     private void Disparo(int tiempoCarga){
         //Debug.Log("Crear Bala");
+        AudioManager.instance.PlayAudio(AudioManager.instance.disparoPlayer);
         Vector3 crecer = new Vector3(tiempoCarga, tiempoCarga,0);
         GameObject balaObjeto = Instantiate(bala, ControladorDisparo.position, ControladorDisparo.rotation);
         balaObjeto.GetComponent<Bala>().AumentarDaño(tiempoCarga);

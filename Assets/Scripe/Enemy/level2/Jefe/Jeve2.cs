@@ -50,6 +50,7 @@ public class Jeve2 : MonoBehaviour, IDaño
     }
     private void Muerte()
     {
+        
         Uno.SetActive(true);
         Destroy(gameObject);
     }
@@ -84,7 +85,14 @@ public class Jeve2 : MonoBehaviour, IDaño
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(controladorAtaque.position, radioAtaque);
     }
-    
-   
+    public void activeCaida(){
+        AudioManager.instance.PlayAudio(AudioManager.instance.espadaJefe3Cae);
+    }
+    public void activeEspada(){
+        AudioManager.instance.PlayAudio(AudioManager.instance.espadaJefe3);
+    }
+    public void activeExplosion(){
+        AudioManager.instance.PlayAudio(AudioManager.instance.explosion1);
+    }
 }
 

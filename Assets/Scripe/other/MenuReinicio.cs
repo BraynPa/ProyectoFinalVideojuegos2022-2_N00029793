@@ -19,6 +19,7 @@ public class MenuReinicio : MonoBehaviour
     }
     public void Reiniciar()
     {
+        AudioManager.instance.PlayAudio(AudioManager.instance.gameOver);
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Jugador"), LayerMask.NameToLayer("Enemigo"), false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
