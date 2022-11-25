@@ -15,11 +15,11 @@ public class DialogueConsejero : MonoBehaviour
     private bool didDialogueStart;
     private int lineIndex;
 
-    // Update is called once per frame
     void Update()
     {  
         if(IsPlayerInRange && Input.GetKeyUp(KeyCode.T)){
             AudioManager.instance.PlayAudio(AudioManager.instance.button);
+
             if(!didDialogueStart){
                 
                 StartDialogue();
@@ -40,7 +40,7 @@ public class DialogueConsejero : MonoBehaviour
         dialoguePanel.SetActive(true);
         dialogueMark.SetActive(false);
         lineIndex = 0;
-        Time.timeScale = 0f;
+        Time.timeScale = 0f;// detiene todo
         StartCoroutine(ShowLine());
     }
 
@@ -70,9 +70,6 @@ public class DialogueConsejero : MonoBehaviour
             dialogueMark.SetActive(true);
             
         }
-
-        
-
     }
     
     private void OnTriggerExit2D(Collider2D collision)

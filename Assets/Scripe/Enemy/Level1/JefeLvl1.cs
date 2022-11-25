@@ -28,6 +28,7 @@ public class JefeLvl1 : MonoBehaviour, IDaño
         rb2D = GetComponent<Rigidbody2D>();
         barraDeVida.InicializarBarraDevida(vida);
         jugador = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        Debug.Log(ControladorJuego.escena);
     }
     private void Update()
     { 
@@ -37,6 +38,7 @@ public class JefeLvl1 : MonoBehaviour, IDaño
 
     public void TomarDaño(float daño)
     {
+        ControladorJuego.totalDaño += daño;
         vida -= daño;
         barraDeVida.CambiarVidaActual(vida);
         if(vida <= 0)

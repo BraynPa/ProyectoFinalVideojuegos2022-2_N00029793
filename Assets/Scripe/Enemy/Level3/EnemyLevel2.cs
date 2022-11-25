@@ -74,6 +74,7 @@ public class EnemyLevel2 : MonoBehaviour, IDaño
     }
      public void TomarDaño(float daño)
     {  
+        ControladorJuego.totalDaño += daño;
         vida -= daño;
         if(vida <= 0)
         {

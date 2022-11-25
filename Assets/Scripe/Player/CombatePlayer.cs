@@ -60,6 +60,7 @@ public class CombatePlayer : MonoBehaviour
         }
         if (vida <= 0)
         {   
+            ControladorJuego.vecesMuerto += 1;
             combateJugador.Vida1();
             rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
             animator.SetTrigger("Muerte");
@@ -80,6 +81,7 @@ public class CombatePlayer : MonoBehaviour
     }
     private void Muerte()
     {
+        ControladorJuego.vecesMuerto += 1;
         Destroy(gameObject);
         combateJugador.VidaRestore();
     }

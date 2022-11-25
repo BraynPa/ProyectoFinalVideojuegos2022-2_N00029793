@@ -40,6 +40,7 @@ public class Jeve2 : MonoBehaviour, IDaño
 
     public void TomarDaño(float daño)
     {
+        ControladorJuego.totalDaño += daño;
         animator.SetTrigger("Damage");
         vida -= daño;
         barraDeVida.CambiarVidaActual(vida);

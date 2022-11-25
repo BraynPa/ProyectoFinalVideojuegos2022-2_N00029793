@@ -97,6 +97,7 @@ public class Enemy2 : MonoBehaviour,IDaño
     }
      public void TomarDaño(float daño)
     {
+        ControladorJuego.totalDaño += daño;
         vida -= daño;
         Debug.Log("recibi daño");
         if(vida <= 0)

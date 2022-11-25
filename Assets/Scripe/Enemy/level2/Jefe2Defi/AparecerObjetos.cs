@@ -16,17 +16,11 @@ public class AparecerObjetos : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player") ){
            caida.ActiveCaida();
-           StartCoroutine(DesactivarColision(2));
            Jefe2.SetActive(true);
-           StartCoroutine(DesactivarColision(2 ));
            BarraDeVida.SetActive(true);
         }
 
 
-    }
-    private IEnumerator DesactivarColision(int i)
-    {
-        yield return new WaitForSeconds(i); 
     }
     private void OnTriggerExit2D(Collider2D collision)
     {

@@ -20,6 +20,7 @@ public class NextLevel : MonoBehaviour
             Timer();
             StartTimer();
             if(timer > 1){
+                 ControladorJuego.escena = SceneManager.GetActiveScene().buildIndex+1;
                  SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
             }
         }

@@ -111,6 +111,7 @@ public class Jefe2Of : MonoBehaviour, IDaño
     }
     public void TomarDaño(float daño)
     {
+        ControladorJuego.totalDaño += daño;
         vida -= daño;
         barraDeVida.CambiarVidaActual(vida);
         if(vida <= 0)

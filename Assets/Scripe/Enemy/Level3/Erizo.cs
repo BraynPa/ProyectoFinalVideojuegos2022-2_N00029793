@@ -35,6 +35,7 @@ public class Erizo : MonoBehaviour, IDaño
     }
      public void TomarDaño(float daño)
     {
+        ControladorJuego.totalDaño += daño;
         vida -= daño;
         if(vida <= 0)
         {

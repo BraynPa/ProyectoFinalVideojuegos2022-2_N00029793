@@ -7,7 +7,6 @@ public class ControllerCofre : MonoBehaviour
     [SerializeField] private GameObject Text;
     [SerializeField] private GameObject Text2;
     [SerializeField] private GameObject Friend;
-    [SerializeField] private GameObject Friend2;
     private Animator animator;
     private bool pressV;
     void Start()
@@ -45,6 +44,5 @@ public class ControllerCofre : MonoBehaviour
     public void activeFriend(){
         Text2.SetActive(true);
         Friend.SetActive(true);
-        Friend2.SetActive(true);
     }
 }

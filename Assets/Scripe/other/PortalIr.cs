@@ -6,11 +6,13 @@ using UnityEngine.UI;
 
 public class PortalIr : MonoBehaviour
 {
+    private TransicioEscena transicion;
     private bool active = false;
     private float timer = 0;
     private bool contar = false;
     void Start()
     {
+        transicion = GameObject.FindGameObjectWithTag("Transicion").GetComponent<TransicioEscena>();  
         
     }
 
@@ -18,10 +20,12 @@ public class PortalIr : MonoBehaviour
     void Update()
     {
         if(active){
+            transicion.ChangeScene();
             Timer();
             StartTimer();
             if(timer > 1){
                  SceneManager.LoadScene(2);
+                 ControladorJuego.escena = 2;
             }
         }
     }

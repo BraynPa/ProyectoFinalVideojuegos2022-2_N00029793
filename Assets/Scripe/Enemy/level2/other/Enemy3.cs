@@ -77,6 +77,7 @@ public class Enemy3 : MonoBehaviour, IDaño
 
      public void TomarDaño(float daño)
     {
+        ControladorJuego.totalDaño += daño;
         vida -= daño;
         animator.SetTrigger("Daño");
         Debug.Log("recibi daño");
